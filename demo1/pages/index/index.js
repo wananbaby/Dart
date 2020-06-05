@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    imageWidth:10000
   },
 
   /**
@@ -16,15 +16,27 @@ Page({
    */
   onLoad: function (options) {
     wx.playBackgroundAudio({
-      dataUrl: 'https://ws.stream.qqmusic.qq.com/C400004Ua1rr0KwoJK.m4a?guid=9992250088&vkey=9A8BE62F020E94C42E914055287C864801056D58F91E69E267AE2D22AA0E3C14876ACB4E41CEBE4DFF9D9C8E830BC9D30D8A2FBD3F6DDC89&uin=8007&fromtag=66'
+      dataUrl: 'https://win-web-ri01-sycdn.kuwo.cn/9b58f23f119a449c659758c22f01e7ca/5ed9eec0/resource/n3/93/82/1766791210.mp3'
     });
+    var that = this;
+    that.setData({
+      imageWidth: wx.getSystemInfoSync().windowWidth,
+      imageHeight: wx.getSystemInfoSync().windowHeight
+    });
+    console.log(that.data.imageWidth);
+    console.log(that.data.imageHeight);
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    const ctx = wx.createCanvasContext('firstCanvas');
+    ctx.setFillStyle('#24c9cc');
+    var that =  this;
+    ctx.fillRect(20, 0,that.data.imageWidth,that.data.imageHeight);
+    ctx.
+    ctx.draw() 
   },
 
   /**
