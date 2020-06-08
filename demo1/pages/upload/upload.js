@@ -6,8 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgs: [],
-    picPaths:[],
+    images: []
   },
 
   /**
@@ -65,53 +64,26 @@ Page({
   onShareAppMessage: function () {
 
   },
-  chooseimage: function() {
-    var that = this;
-    wx.wx.showActionSheet({
-      itemList: ['从相册中选择','拍照'],
-      itemColor: '#000000',
-      success: (result) => {
-        if (!result.cancel) {
-          if (result.tapIndex == 0) {
-            that.chooseWxImage('album')
-          } else if (result.tapIndex == 1) {
-            that.chooseWxImage('camera')
-          }
-        }
-      },
-    })
-  },
-  chooseWxImage: function (type) {
-    var that = this;
-    var imgsPaths = that.data.imgs;
+  chooseImage(e) {
     wx.chooseImage({
-      sizeType: ['original','compressed'],
-      sourceType: [type],
-      success: function (result) {
-        console.log(result.tempFilePaths[0]);
-        that.upImgs(result.tempFilePaths[0], 0)
+      sizeType: ['original', 'compressed'],  //可选择原图或压缩后的图片
+      sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
+      success: res => {
+        const images = this.data.images.concat(res.tempFilePaths)
+        // 限制最多只能留下3张照片
+        this.data.images = images.length <= 3 ? images : images.slice(0, 3) 
+        $digest(this)
       }
     })
   },
-  upImgs: function (imgurl, index) {
-    var that = this;
-    wx.uploadFile({
-      url: 'https://xxxxxxxxxxxxxxxxxxxxxxxxxxxx',//
-      filePath: imgurl,
-      name: 'file',
-      header: {
-        'content-type': 'multipart/form-data'
-      },
-      formData: null,
-      success: function (res) {
-        console.log(res) //接口返回网络路径
-        var data = JSON.parse(res.data)
-          that.data.picPaths.push(data['msg'])
-          that.setData({
-            picPaths: that.data.picPaths
-          })
-          console.log(that.data.picPaths)
-      }
+
+
+  handleImagePreview(e) {
+    const idx = e.target.dataset.idx
+    const images = this.data.images
+    wx.previewImage({
+      current: images[idx],  //当前预览的图片
+      urls: images,  //所有要预览的图片
     })
-  },
+  }
 })
