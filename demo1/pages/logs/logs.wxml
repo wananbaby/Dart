@@ -1,3 +1,22 @@
 <!--logs.wxml-->
-<view class="container">
+<view class='header'>
+  <text class='title'>单口喜剧
+  </text>
+  <text class='title'>Stand-up Comedy</text>
 </view>
+<view class='body'>
+  <text class='title0'>首页推荐</text>
+  <text class='title2'>帅气速览</text>
+  <swiper class='imgsilder' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" indicator-active-color="#FFD92E" indicator-color="#E8F0F1" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+        <image mode='aspectFill' src="{{item}}" class="slide-image" width="355" height="200" bindtap='gotoDetail' />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<import src="/pages/upload/upload.wxml" />
+<template is="userPannel" data="{{isShowUserPannel}}" />
+<view class='add_symbol' bindtap='showUserPannel'></view>
+

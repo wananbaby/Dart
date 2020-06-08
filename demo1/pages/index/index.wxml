@@ -1,2 +1,5 @@
 <!--index.wxml-->
-<canvas class="canvas" canvas-id="firstCanvas"></canvas>
+<!--
+<canvas class="canvas" canvas-id="firstCanvas" style="margin:0 auto; ">
+</canvas>
+-->

@@ -16,12 +16,12 @@ Page({
    */
   onLoad: function (options) {
     wx.playBackgroundAudio({
-      dataUrl: 'https://win-web-ri01-sycdn.kuwo.cn/9b58f23f119a449c659758c22f01e7ca/5ed9eec0/resource/n3/93/82/1766791210.mp3'
+      dataUrl: 'https://nx01-sycdn.kuwo.cn/0e28ee647d192951507d13f8c827ad60/5eddb11a/resource/n2/36/44/1478416719.mp3'
     });
     var that = this;
     that.setData({
       imageWidth: wx.getSystemInfoSync().windowWidth,
-      imageHeight: wx.getSystemInfoSync().windowHeight
+      imageHeight: (wx.getSystemInfoSync().windowHeight)*2
     });
     console.log(that.data.imageWidth);
     console.log(that.data.imageHeight);
@@ -34,8 +34,7 @@ Page({
     const ctx = wx.createCanvasContext('firstCanvas');
     ctx.setFillStyle('#24c9cc');
     var that =  this;
-    ctx.fillRect(20, 0,that.data.imageWidth,that.data.imageHeight);
-    ctx.
+    ctx.fillRect(0, 20,that.data.imageWidth,that.data.imageHeight);
     ctx.draw() 
   },
 
