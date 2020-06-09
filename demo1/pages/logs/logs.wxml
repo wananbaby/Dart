@@ -16,7 +16,7 @@
   </swiper>
 </view>
 
-<import src="/pages/upload/upload.wxml" />
+<import src="/pages/template/indexPopup.wxml" />
 <template is="userPannel" data="{{isShowUserPannel}}" />
 <view class='add_symbol' bindtap='showUserPannel'></view>
 

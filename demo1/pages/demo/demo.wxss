@@ -1,8 +1,25 @@
 /* pages/demo/demo.wxss */
-.canvas{
-  width: 100%;
-  height: auto;
+
+ 
+.pic {
+float:left;
+position:relative;
+margin-right:9px;
+margin-bottom:9px;
 }
+ 
+.delete-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/*  */
+.weui-uploader{
+  padding: 10rpx;
+}
+
 page{
-  background: #24c9cc;
+  /* background: #24c9cc; */
+  background: #1B1758;
 }

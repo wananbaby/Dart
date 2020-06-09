@@ -1,10 +1,18 @@
-<template name="userPannel">
-  <!--用户盒模型  -->
-  <view wx:if="{{isShowUserPannel}}" class='user'>
-    <!--背景  -->
-    <image class='bg' src="../image/bg.png"></image>
-    <button style="background: #24c9cc;" bindtap="chooseImage" >选择图片</button>
-          <!-- 图片缩略图  -->
-          <image class="q-image" src="{{images}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
-  </view>
-</template>
+<navigator class='back' open-type="navigateBack">返回</navigator>
+
+<view class="weui-uploader">
+      <view class="img-v weui-uploader__bd">
+        <view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+            <image class='weui-uploader__img '
+                    src="{{item}}"
+                    data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
+                      <icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon>
+            </image>
+        </view>
+          <!-- 用来提示用户上传图片 -->
+          <view class="weui-uploader__input-box pic" bindtap='chooseImg'></view>
+      </view>
+    <button class="upload-img-btn" bindtap='chooseImg' type='primary'>拍照/选择</button>
+    <button class="upload-img-btn" bindtap='upImg' type='primary'>上传</button>
+</view>  
+

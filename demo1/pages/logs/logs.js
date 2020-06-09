@@ -9,8 +9,7 @@ Page({
             'http://jianpin.51vip.biz/image/4.jpg',
             'http://jianpin.51vip.biz/image/5.jpg',
             'http://jianpin.51vip.biz/image/6.jpg',
-            'http://jianpin.51vip.biz/image/7.jpg',
-            'http://jianpin.51vip.biz/image/8.jpg'
+            'http://jianpin.51vip.biz/image/7.jpg'
         ],
         indicatorDots: false,
         autoplay: true,
@@ -18,6 +17,7 @@ Page({
         duration: 800,
         isShowUserPannel:false,
     },
+    
     //options(Object)
     onLoad: function(options){
         
@@ -61,4 +61,4 @@ Page({
             isShowUserPannel : isShow
         })
     }
-});
+})

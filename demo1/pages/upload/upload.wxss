@@ -1,45 +1,40 @@
-.add_symbol{
-    width: 80rpx;
-    height: 80rpx;
-    display: block;
-    background-color: rgba(255, 217, 46, 1);
-    position: fixed;
-    z-index: 9;
-    border-radius: 50%;
-    bottom: 35rpx;
-    right: 35rpx;
-    box-shadow:2px 1px 2px #888888;
-    
-  }
-  .add_symbol::before, .add_symbol::after{
-    content: "";
-    display: inline-block;
-    width: 26rpx;
-    height: 3rpx;
-    background-color: rgba(255, 255, 255, 1);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -1.5rpx;
-    margin-left: -13rpx;
-  }
-  .add_symbol::after{
-    transform: rotate(90deg)
-  }
-  .user {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    padding-top: 50rpx;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    background: rgba(255, 255, 255, 1);
-  }
-  .bg {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+
+  
+  /* 图片上传 */
+  .pic {
+    float:left;
+    position:relative;
+    margin-right:9px;
+    margin-bottom:9px;
+    }
+     
+    .delete-btn{
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 30rpx;
+    }
+    /*  */
+    .weui-uploader{
+      padding: 10rpx;
+    }
+    .back {
+      font-size: 30rpx;
+      color: #ffd92e;
+      display: block;
+      text-align: center;
+      line-height: 70rpx;
+      width: 130rpx;
+      height: 70rpx;
+      background-color: rgba(255, 255, 255, 0);
+      border: 3rpx solid #ffd92e;
+      border-radius: 25rpx;
+      position: absolute;
+      left: 50%;
+      margin-left: -65rpx;
+      bottom: 70rpx;
+    }

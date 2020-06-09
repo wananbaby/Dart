@@ -1,4 +1,4 @@
-@import "/pages/upload/upload.wxss";
+@import "/pages/template/indexPopup.wxss";
 
 page{
   background: #1B1758;
@@ -48,4 +48,55 @@ page{
   font-size: 60rpx;
   font-weight: 900;
   padding-left: 24rpx;
+}
+.add_symbol{
+  width: 80rpx;
+  height: 80rpx;
+  display: block;
+  background-color: rgba(255, 217, 46, 1);
+  position: fixed;
+  z-index: 9;
+  border-radius: 50%;
+  bottom: 35rpx;
+  right: 35rpx;
+  box-shadow:2px 1px 2px #888888;
+  
+}
+.add_symbol::before, .add_symbol::after{
+  content: "";
+  display: inline-block;
+  width: 26rpx;
+  height: 3rpx;
+  background-color: rgba(255, 255, 255, 1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -1.5rpx;
+  margin-left: -13rpx;
+}
+.add_symbol::after{
+  transform: rotate(90deg)
+}
+.user {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  padding-top: 50rpx;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 1);
+}
+.bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.function {
+margin-left: 100rpx;
+margin-right: 100rpx;
+margin-top: 200rpx;
+position:relative;
 }

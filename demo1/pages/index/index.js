@@ -15,16 +15,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.playBackgroundAudio({
-      dataUrl: 'https://nx01-sycdn.kuwo.cn/0e28ee647d192951507d13f8c827ad60/5eddb11a/resource/n2/36/44/1478416719.mp3'
-    });
+    // wx.playBackgroundAudio({
+    //   dataUrl: 'http://jianpin.51vip.biz/%E7%A8%BB%E9%A6%99.mp3'
+    // });
     var that = this;
     that.setData({
       imageWidth: wx.getSystemInfoSync().windowWidth,
       imageHeight: (wx.getSystemInfoSync().windowHeight)*2
     });
-    console.log(that.data.imageWidth);
-    console.log(that.data.imageHeight);
+    // console.log(that.data.imageWidth);
+    // console.log(that.data.imageHeight);
   },
 
   /**

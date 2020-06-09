@@ -1,0 +1,12 @@
+<!--pages/user/user.wxml-->
+<template name="userPannel">
+  <!--用户盒模型  -->
+  <view wx:if="{{isShowUserPannel}}" class='user'>
+    <!--背景  -->
+    <image class='bg' src="/image/bg.png"></image>
+    <!--功能盒模型  -->
+    <view class='function'>
+      <navigator url="/pages/upload/upload"  class='usercenter'>上传</navigator>
+    </view>
+  </view>
+</template>
