@@ -1,10 +1,10 @@
 //app.js
 App({
   onLaunch: function () {
-    // 全局背景歌曲
-    // wx.playBackgroundAudio({
-    //   dataUrl: 'http://jianpin.51vip.biz/%E7%A8%BB%E9%A6%99.mp3'
-    // });
+    //全局背景歌曲
+    wx.playBackgroundAudio({
+      dataUrl: 'http://jianpin.51vip.biz/%E7%A8%BB%E9%A6%99.mp3'
+    });
     
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
