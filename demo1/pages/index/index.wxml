@@ -9,9 +9,9 @@
   <view class='project'>
       <image class='headimage' src='http://img.zcool.cn/community/01ca005b02587ba801218cf4fe698a.gif'></image>
       <view class='projecttext'>
-        <text class='biaoti'>膨胀的小人物</text>
-        <text class='jianjie'>用文字的力量，改变潮水的方向</text>
-        <text class='field'>电影 10W+参与</text>
+        <text class='biaoti'>玛卡巴卡</text>
+        <text class='jianjie'>晚安，玛卡巴卡 晚安，小朋友们 晚安</text>
+        <text class='field'>动画 10W+参与</text>
       </view>
     <navigator url='/pages/pageopen/pageopen'>
       <view class='openpush'></view>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wx.mapper.ProjectMapper">
+
+
+    <!--查询单个-->
+    <select id="queryProjectById" parameterType="java.lang.Long" resultType="com.wx.domain.Project">
+        select
+          id, headimage_id, biaoti, jianjie, field
+        from wx.project
+        where  id = #{id}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryProjectList" parameterType="com.wx.domain.Project" resultType="com.wx.domain.Project">
+        select
+          id, headimage_id, biaoti, jianjie, field
+        from wx.project
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="headimageId != null">
+                and headimage_id = #{headimageId}
+            </if>
+            <if test="biaoti != null and biaoti != ''">
+                and biaoti = #{biaoti}
+            </if>
+            <if test="jianjie != null and jianjie != ''">
+                and jianjie = #{jianjie}
+            </if>
+            <if test="field != null and field != ''">
+                and field = #{field}
+            </if>
+        </where>
+    </select>
+
+</mapper>

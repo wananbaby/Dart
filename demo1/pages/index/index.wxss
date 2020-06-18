@@ -2,6 +2,18 @@ page{
     /* background: #24c9cc; */
     background: #1B1758;
 }
+.projectbox {
+  padding: 0rpx 50rpx;
+  position: relative;
+}
+.headingtext {
+  font-size: 40rpx;
+  color:#25D4D0;
+  margin-top: 50rpx;
+  display: block;
+  letter-spacing: 2rpx;
+  font-weight: 900;
+}
 .project {
     width: 650rpx;
     height: 180rpx;
