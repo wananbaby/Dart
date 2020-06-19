@@ -9,21 +9,25 @@ import com.wx.service.ProjectService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 /**
  * @author 021411
  */
-@Controller
-@Api
+@RestController
+@Api(tags = {"ProjectController"})
 @RequestMapping("/wx/project")
 public class ProjectController{
+
+
+    @ApiOperation(value = "zys")
+    @ResponseBody
+    @RequestMapping(value = "/zys")
+    public String zys(){
+        return "zys";
+    }
 
     @Autowired
     private ProjectService projectService;
@@ -31,7 +35,7 @@ public class ProjectController{
 
     @ApiOperation(value = "查询项目列表")
     @ResponseBody
-    @PostMapping("/queryProjectList")
+    @PostMapping(value = "/queryProjectList")
     public QueryProjectListResponse queryProjectList(@RequestBody QueryProjectListRequest request){
         QueryProjectListResponse response = new QueryProjectListResponse();
         List<Project> projects = projectService.queryProjectList(ProjectConvertor.convert2Project(request));

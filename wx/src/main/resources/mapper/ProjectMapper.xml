@@ -4,24 +4,18 @@
 
 
     <!--查询单个-->
-    <select id="queryProjectById" parameterType="java.lang.Long" resultType="com.wx.domain.Project">
-        select
-          id, headimage_id, biaoti, jianjie, field
-        from wx.project
-        where  id = #{id}
-    </select>
 
     <!--通过实体作为筛选条件查询-->
-    <select id="queryProjectList" parameterType="com.wx.domain.Project" resultType="com.wx.domain.Project">
+    <select id="queryProjectList"  resultType="com.wx.domain.Project">
         select
-          id, headimage_id, biaoti, jianjie, field
-        from wx.project
+           p.id, p.headimage_id headImageId, i.src headImage, p.biaoti, p.jianjie, p.field
+        from wx.project p left join wx.img i on i.id = p.headimage_id
         <where>
             <if test="id != null">
                 and id = #{id}
             </if>
-            <if test="headimageId != null">
-                and headimage_id = #{headimageId}
+            <if test="headImageId != null">
+                and headimage_id = #{headImageId}
             </if>
             <if test="biaoti != null and biaoti != ''">
                 and biaoti = #{biaoti}

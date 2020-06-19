@@ -7,11 +7,11 @@
   <text class='headingtext'>Today</text>
   <!--第一部分  -->
   <view class='project'>
-      <image class='headimage' src='http://img.zcool.cn/community/01ca005b02587ba801218cf4fe698a.gif'></image>
+      <image class='headimage' src='{{headimage}}'></image>
       <view class='projecttext'>
-        <text class='biaoti'>玛卡巴卡</text>
-        <text class='jianjie'>晚安，玛卡巴卡 晚安，小朋友们 晚安</text>
-        <text class='field'>动画 10W+参与</text>
+        <text class='biaoti'>{{biaoti}}</text>
+        <text class='jianjie'>{{jianjie}}</text>
+        <text class='field'>{{field}}</text>
       </view>
     <navigator url='/pages/pageopen/pageopen'>
       <view class='openpush'></view>

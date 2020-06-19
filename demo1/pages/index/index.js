@@ -8,7 +8,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imageWidth:10000
+    imageWidth:10000,
+    headimage: "",
+    biaoti: "test",
+    jianjie: "test",
+    field: "test"
   },
 
   /**
@@ -25,6 +29,7 @@ Page({
     });
     // console.log(that.data.imageWidth);
     // console.log(that.data.imageHeight);
+
   },
 
   /**
@@ -36,6 +41,23 @@ Page({
     var that =  this;
     ctx.fillRect(0, 20,that.data.imageWidth,that.data.imageHeight);
     ctx.draw() 
+    wx.request({
+      url: 'http://jianpin.51vip.biz/wx/project/queryProjectList',
+      data: {},
+      header: {'content-type':'application/json'},
+      method: 'POST',
+      dataType: 'json',
+      responseType: 'json',
+      success: (result)=>{
+        wx.showToast({
+          title: result.data,
+          icon: 'none',
+          duration: 1500
+        }); 
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
   },
 
   /**
